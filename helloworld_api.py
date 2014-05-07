@@ -9,6 +9,8 @@ from protorpc import messages
 from protorpc import message_types
 from protorpc import remote
 
+from google.appengine.ext import ndb
+
 WEB_CLIENT_ID = 'replace this with your web client application ID'
 ANDROID_CLIENT_ID = 'replace this with your Android client ID'
 IOS_CLIENT_ID = 'replace this with your iOS client ID'
@@ -80,6 +82,5 @@ class HelloWorldApi(remote.Service):
                  else 'Anonymous')
         return Greeting(message='hello %s' % (email,))
 
-#test 2
 
 APPLICATION = endpoints.api_server([HelloWorldApi])
