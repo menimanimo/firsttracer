@@ -80,6 +80,6 @@ class HelloWorldApi(remote.Service):
                  else 'Anonymous')
         return Greeting(message='hello %s' % (email,))
 
-##test#
+#test 2
 
 APPLICATION = endpoints.api_server([HelloWorldApi])
