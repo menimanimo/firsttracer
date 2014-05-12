@@ -92,4 +92,11 @@ class Qn (ndb.Model) :
     qnanswer=ndb.StringProperty()
 
 
+    @endpoints.method(message_types.VoidMessage, Qn,
+                      path='hellogreeting/qnadd', http_method='POST',
+                      name='greetings.qnadd')
+    def qn_add(self, request)
+        return Qn(qid=request.qid)
+
+
 APPLICATION = endpoints.api_server([HelloWorldApi])
