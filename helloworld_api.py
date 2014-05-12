@@ -81,6 +81,15 @@ class HelloWorldApi(remote.Service):
         email = (current_user.email() if current_user is not None
                  else 'Anonymous')
         return Greeting(message='hello %s' % (email,))
+        
+        
+#GDL services
+class Qn (ndb.Model) :
+    qid= ndb.IntegerProperty()
+    qnissue =ndb.TextProperty()
+    qninfo =ndb.FloatProperty(repeated=True)
+    qnconcepts=ndb.StringProperty(repeated=True)
+    qnanswer=ndb.StringProperty()
 
 
 APPLICATION = endpoints.api_server([HelloWorldApi])
